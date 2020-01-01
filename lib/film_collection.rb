@@ -15,7 +15,7 @@ class FilmCollection
     @collection.map(&:director).uniq
   end
 
-  def select_film_by_director(user_input, films_directors)
-    @collection.select { |film| film.director == films_directors[user_input - 1] }.sample
+  def select_film_by_director(user_input)
+    @collection.select { |film| film.director == get_directors_from_collection[user_input - 1] }.sample
   end
 end

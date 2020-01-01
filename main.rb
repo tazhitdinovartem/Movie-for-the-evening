@@ -18,7 +18,7 @@ until (1..films_directors.count).include?(user_input) do
   user_input = STDIN.gets.to_i
 end
 
-selected_film = films.select_film_by_director(user_input, films_directors)
+selected_film = films.select_film_by_director(user_input)
 
 puts "И сегодня вечером рекомендую посмотреть:"
 puts "#{films_directors[user_input - 1]} — #{selected_film}"
