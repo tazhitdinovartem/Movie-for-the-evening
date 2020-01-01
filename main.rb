@@ -28,4 +28,3 @@ selected_film = films.select_film_by_director(user_input)
 puts "И сегодня вечером рекомендую посмотреть:"
 puts "#{films_directors[user_input - 1]} — #{selected_film}"
 
-
