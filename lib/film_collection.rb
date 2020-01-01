@@ -11,6 +11,13 @@ class FilmCollection
     )
   end
 
+  def self.create_collection_from_parsing(parsed_films)
+    new(
+      parsed_films.
+      map { |lines| Film.new(lines[0], lines[1], lines[2].to_i) }
+    )
+  end
+
   def get_directors_from_collection
     @collection.map(&:director).uniq
   end

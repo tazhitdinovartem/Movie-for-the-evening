@@ -1,8 +1,13 @@
+require 'nokogiri'
+require 'open-uri'
 require_relative "lib/film"
 require_relative "lib/film_collection"
+require_relative "lib/parsing_collection"
 
-films_path = Dir["#{__dir__}/data/films/*"]
-films = FilmCollection.create_collection_from_files(films_path)
+#films_path = Dir["#{__dir__}/data/films/*"]
+parsed_films = ParsingCollection.parse_collection
+films = FilmCollection.create_collection_from_parsing(parsed_films)
+#films = FilmCollection.create_collection_from_files(films_path)
 films_directors = films.get_directors_from_collection
 
 puts "Программа «Фильм на вечер» \n\n"
@@ -22,3 +27,5 @@ selected_film = films.select_film_by_director(user_input)
 
 puts "И сегодня вечером рекомендую посмотреть:"
 puts "#{films_directors[user_input - 1]} — #{selected_film}"
+
+
