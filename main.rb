@@ -1,5 +1,5 @@
-require 'nokogiri'
-require 'open-uri'
+require "nokogiri"
+require "open-uri"
 require_relative "lib/film"
 require_relative "lib/film_collection"
 require_relative "lib/parsing_collection"
@@ -27,4 +27,3 @@ selected_film = films.select_film_by_director(user_input)
 
 puts "И сегодня вечером рекомендую посмотреть:"
 puts "#{films_directors[user_input - 1]} — #{selected_film}"
-
