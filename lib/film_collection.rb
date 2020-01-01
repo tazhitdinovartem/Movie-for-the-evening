@@ -1,5 +1,4 @@
 class FilmCollection
-  attr_reader :collection
   def initialize(collection = [])
     @collection = collection
   end
