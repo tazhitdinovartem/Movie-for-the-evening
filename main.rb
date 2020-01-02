@@ -5,7 +5,7 @@ require_relative "lib/film_collection"
 require_relative "lib/parsing_collection"
 
 #films_path = Dir["#{__dir__}/data/films/*"]
-parsed_films = ParsingCollection.parse_collection
+parsed_films = ParsingCollection.from_imdb
 films = FilmCollection.create_collection_from_parsing(parsed_films)
 #films = FilmCollection.create_collection_from_files(films_path)
 films_directors = films.get_directors_from_collection
