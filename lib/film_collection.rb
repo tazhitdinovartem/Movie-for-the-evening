@@ -18,6 +18,12 @@ class FilmCollection
     )
   end
 
+  def show_directors
+    get_directors_from_collection.map.with_index(1) do |director, i|
+      "#{i}: #{director}"
+    end
+  end
+
   def get_directors_from_collection
     @collection.map(&:director).uniq
   end

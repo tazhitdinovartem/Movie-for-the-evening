@@ -8,6 +8,6 @@ class Film
   end
 
   def to_s
-    "«#{@title}» (#{@year})"
+    "#{@director} — «#{@title}» (#{@year})"
   end
 end
