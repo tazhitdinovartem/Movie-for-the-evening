@@ -1,6 +1,6 @@
 class FilmCollection
-  def initialize(collection = [])
-    @collection = collection
+  def self.from_imdb
+    new(ParsingCollection.from_imdb)
   end
 
   def self.create_collection_from_files(films_path)
@@ -11,11 +11,8 @@ class FilmCollection
     )
   end
 
-  def self.create_collection_from_parsing(parsed_films)
-    new(
-      parsed_films.
-      map { |lines| Film.new(lines[0], lines[1], lines[2].to_i) }
-    )
+  def initialize(collection = [])
+    @collection = collection
   end
 
   def show_directors

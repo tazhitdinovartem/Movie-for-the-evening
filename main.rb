@@ -4,12 +4,7 @@ require_relative "lib/film"
 require_relative "lib/film_collection"
 require_relative "lib/parsing_collection"
 
-# Для теста подтягивания фильмов из файлов
-# films_path = Dir["#{__dir__}/data/films/*"]
-# films = FilmCollection.create_collection_from_files(films_path)
-
-parsed_films = ParsingCollection.from_imdb
-films = FilmCollection.create_collection_from_parsing(parsed_films)
+films = FilmCollection.from_imdb
 films_directors = films.get_directors_from_collection
 
 puts "Программа «Фильм на вечер» \n\n"
